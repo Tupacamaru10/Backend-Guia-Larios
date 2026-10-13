@@ -7,6 +7,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 export class UsersService {
   constructor(private prisma: PrismaService) {}
 
+  
   async create(createUserDto: CreateUserDto) {
     const { tenantId, ...userData } = createUserDto;
 
@@ -20,16 +21,19 @@ export class UsersService {
     });
   }
 
+  
   async findAll() {
     return this.prisma.user.findMany();
   }
 
+  
   async findOne(id: number) {
     return this.prisma.user.findUnique({
       where: { id },
     });
   }
 
+  
   async update(id: number, updateUserDto: UpdateUserDto) {
     const { tenantId, ...userData } = updateUserDto;
 
@@ -46,6 +50,7 @@ export class UsersService {
     });
   }
 
+  
   async remove(id: number) {
     return this.prisma.user.delete({
       where: { id },

@@ -14,5 +14,5 @@ export class CreateUserDto {
   telephone?: string;
 
   @ApiProperty({ required: true, example: 1, description: 'Id del tenant' })
-  tenantId: number;   // ← ESTA LÍNEA ES LA QUE FALTA
+  tenantId: number;
 }
